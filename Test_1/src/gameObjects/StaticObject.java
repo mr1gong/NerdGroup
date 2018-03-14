@@ -2,8 +2,14 @@ package gameObjects;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+	/**
+	 * Temporary Class
+	 * @author Marek Makovec
+	 *
+	 */
+
 public class StaticObject implements GameObject{
-	
+	//TODO: Remake into interface...
 	protected int x;
 	protected int y;
 	protected int width;
@@ -37,19 +43,13 @@ public class StaticObject implements GameObject{
 	
 	
 	public Rectangle getBounds() {
-		Rectangle r = new Rectangle();
 	    return new Rectangle(x, y, width, height);
 	}
 
 
 
 
-	@Override
-	public int getCollisionDamage() {
-		return collisionDamage;
-		
-	}
-
+	
 	@Override
 	public void setVisible(boolean b) {
 	

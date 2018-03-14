@@ -1,47 +1,48 @@
 package gameObjects;
-
-public class DynamicObject extends StaticObject implements GameObject {
+/**
+ * 
+ * @author Marek Makovec
+ * @version 1.0
+ */
+public interface DynamicObject{
 	
-	private int velX;
-	private int velY;
-
-	public DynamicObject(int x, int y, int width, int height, boolean visible, boolean collidable) {
-		super(x, y, width, height, visible, collidable);
-		velX = 0;
-		velY = 0;
-		
-	}
 	
-	public void move() {
-		super.x += velX;
-		super.y += velY;
-	}
-	/*
-	public void move(int x, int y, int time) {
-		velX = (super.x - x)/time;
-		velX = (super.x - x)/time;
-	}*/
+	/**
+	 * Sets X and Y of the object.
+	 */
+	public void move();
 
-	public int getVelX() {
-		return velX;
-	}
 
-	public void setVelX(int velX) {
-		this.velX = velX;
-	}
+	/**
+	 * Returns velocity in X axis.
+	 * @return Velocity.
+	 */
+	public int getVelX();
+	/**
+	 * Setting the velocity in X axis.
+	 * @param velX - Velocity
+	 */
+	public void setVelX(int velX);
+	/**
+	 * Returns velocity in Y axis.
+	 * @return Velocity.
+	 */
+	public int getVelY();
 
-	public int getVelY() {
-		return velY;
-	}
-
-	public void setVelY(int velY) {
-		this.velY = velY;
-	}
-	public int nextX() {
-		return x+velX;
-	}
-	public int nextY() {
-		return y+velY;
-	}
+	/**
+	 * Setting the velocity in Y axis.
+	 * @param velY - Velocity
+	 */
+	public void setVelY(int velY);
+	/**
+	 * 
+	 * @return Value of the next expected coordinate X.
+	 */
+	public int nextX();
+	/**
+	 * 
+	 * @return Value of the next expected coordinate Y.
+	 */
+	public int nextY(); 
 	
 }
